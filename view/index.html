@@ -62,6 +62,60 @@
             evt.currentTarget.className += " active";
         }
         document.getElementsByClassName("tablinks")[0].click(); // Open the first tab by default
+
+        function convertLength() {
+            const value = Number(document.getElementById('lengthValue').value)
+            const fromUnit = document.getElementById('lengthFromUnit').value
+            const toUnit = document.getElementById('lengthToUnit').value
+
+            fetch('http://localhost:3000/converter/length', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ value, fromUnit, toUnit }),
+            })
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data)
+                })
+        }
+
+        function convertWeight() {
+            const value = Number(document.getElementById('weightValue').value)
+            const fromUnit = document.getElementById('weightFromUnit').value
+            const toUnit = document.getElementById('weightToUnit').value
+
+            fetch('http://localhost:3000/converter/weight', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ value, fromUnit, toUnit }),
+            })
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data)
+                })
+        }
+
+        function convertTemperature() {
+            const value = Number(document.getElementById('temperatureValue').value)
+            const fromUnit = document.getElementById('temperatureFromUnit').value
+            const toUnit = document.getElementById('temperatureToUnit').value
+
+            fetch('http://localhost:3000/converter/temperature', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ value, fromUnit, toUnit }),
+            })
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data)
+                })
+        }
     </script>
 </body>
 

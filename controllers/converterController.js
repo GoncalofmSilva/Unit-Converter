@@ -10,16 +10,16 @@ import {
 } from "../models/converterModel.js";
 
 export const convertLength = async (req, res) => {
-    const { value, fromUnit, toUnit} = req.body
-  convertLengthModel({ value, fromUnit, toUnit});
+  const { value, fromUnit, toUnit } = req.body;
+  convertLengthModel({ value, fromUnit, toUnit });
 };
 
 export const convertWeight = async (req, res) => {
-    const { value, fromUnit, toUnit} = req.body
-  convertWeightModel({ value, fromUnit, toUnit});
+  const { value, fromUnit, toUnit } = req.body;
+  convertWeightModel({ value, fromUnit, toUnit });
 };
 
 export const convertTemperature = async (req, res) => {
-    const { value, fromUnit, toUnit} = req.body
-  convertTemperatureModel({ value, fromUnit, toUnit});
+  const { value, fromUnit, toUnit } = req.body;
+  convertTemperatureModel({ value, fromUnit, toUnit });
 };
