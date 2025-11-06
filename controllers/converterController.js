@@ -10,16 +10,37 @@ import {
 } from "../models/converterModel.js";
 
 export const convertLength = async (req, res) => {
-  const { value, fromUnit, toUnit } = req.body;
-  convertLengthModel({ value, fromUnit, toUnit });
+  try {
+    const { value, fromUnit, toUnit } = req.body;
+    const converter = await convertLengthModel({ value, fromUnit, toUnit });
+    res.status(201).json(converter);
+  } catch (error) {
+    res
+      .status(500)
+      .json({ error: "Error converting Length", details: error.message });
+  }
 };
 
 export const convertWeight = async (req, res) => {
-  const { value, fromUnit, toUnit } = req.body;
-  convertWeightModel({ value, fromUnit, toUnit });
+  try {
+    const { value, fromUnit, toUnit } = req.body;
+    const converter = await convertWeightModel({ value, fromUnit, toUnit });
+    res.status(201).json(converter);
+  } catch (error) {
+    res
+      .status(500)
+      .json({ error: "Error converting Weight", details: error.message });
+  }
 };
 
 export const convertTemperature = async (req, res) => {
-  const { value, fromUnit, toUnit } = req.body;
-  convertTemperatureModel({ value, fromUnit, toUnit });
+  try {
+    const { value, fromUnit, toUnit } = req.body;
+    const converter = await convertTemperatureModel({ value, fromUnit, toUnit });
+    res.status(201).json(converter);
+  } catch (error) {
+    res
+      .status(500)
+      .json({ error: "Error converting Temperature", details: error.message });
+  }
 };
