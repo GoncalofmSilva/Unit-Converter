@@ -3,9 +3,10 @@
   "version": "1.0.0",
   "description": "Unit converter to convert between different units of measurement.\r https://roadmap.sh/projects/unit-converter",
   "main": "index.js",
-  "module": "type",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
   },
   "repository": {
     "type": "git",

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="tab">
+        <button class="tablinks" onclick="openConverter(event, 'Length')">Length</button>
+        <button class="tablinks" onclick="openConverter(event, 'Weight')">Weight</button>
+        <button class="tablinks" onclick="openConverter(event, 'Temperature')">Temperature</button>
+    </div>
+
+    <div id="Length" class="tabcontent">
+        <h3>Length</h3>
+        <label for="lengthValue">Enter the Length to convert:</label><br>
+        <input type="number" id="lengthValue" placeholder=""><br>
+        <label for="lengthFromUnit">Unit to Convert From</label><br>
+        <input type="text" id="lengthFromUnit" placeholder=""><br>
+        <label for="lengthToUnit">Unit to Convert To</label><br>
+        <input type="text" id="lengthToUnit" placeholder=""><br>
+        <button onclick="convertLength()">Convert</button>
+    </div>
+
+    <div id="Weight" class="tabcontent">
+        <h3>Weight</h3>
+        <label for="weightValue">Enter the Weight to convert:</label><br>
+        <input type="number" id="weightValue" placeholder=""><br>
+        <label for="weightFromUnit">Unit to Convert From</label><br>
+        <input type="text" id="weightFromUnit" placeholder=""><br>
+        <label for="weightToUnit">Unit to Convert To</label><br>
+        <input type="text" id="weightToUnit" placeholder=""><br>
+        <button onclick="convertWeight()">Convert</button>
+    </div>
+
+    <div id="Temperature" class="tabcontent">
+        <h3>Temperature</h3>
+        <label for="temperatureValue">Enter the Temperature to convert:</label><br>
+        <input type="number" id="temperatureValue" placeholder=""><br>
+        <label for="temperatureFromUnit">Unit to Convert From</label><br>
+        <input type="text" id="temperatureFromUnit" placeholder=""><br>
+        <label for="temperatureToUnit">Unit to Convert To</label><br>
+        <input type="text" id="temperatureToUnit" placeholder=""><br>
+        <button onclick="convertTemperature()">Convert</button>
+    </div>
+
+    <script>
+        function openConverter(evt, converterType) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(converterType).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+        document.getElementsByClassName("tablinks")[0].click(); // Open the first tab by default
+    </script>
+</body>
+
+</html>

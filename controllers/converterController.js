@@ -11,15 +11,15 @@ import {
 
 export const convertLength = async (req, res) => {
     const { value, fromUnit, toUnit} = req.body
-  convertLengthModel();
+  convertLengthModel({ value, fromUnit, toUnit});
 };
 
 export const convertWeight = async (req, res) => {
     const { value, fromUnit, toUnit} = req.body
-  convertWeightModel();
+  convertWeightModel({ value, fromUnit, toUnit});
 };
 
 export const convertTemperature = async (req, res) => {
     const { value, fromUnit, toUnit} = req.body
-  convertTemperatureModel();
+  convertTemperatureModel({ value, fromUnit, toUnit});
 };
