@@ -185,7 +185,7 @@ async function convertMile({ value, fromUnit, toUnit }) {
 
 // Weight Conversion Functions
 async function convertMiligram({ value, fromUnit, toUnit }) {
-  if (fromUnit === "miligram") {
+  if (fromUnit === "milligram") {
     switch (toUnit) {
       case "gram":
         return value / 1000;
@@ -194,6 +194,7 @@ async function convertMiligram({ value, fromUnit, toUnit }) {
       case "ounce":
         return value / 28349.523125;
       case "pound":
+        console.log(value / 453592.37)
         return value / 453592.37;
       case "ton":
         return value / 1000000000;
@@ -206,7 +207,7 @@ async function convertMiligram({ value, fromUnit, toUnit }) {
 async function convertGram({ value, fromUnit, toUnit }) {
   if (fromUnit === "gram") {
     switch (toUnit) {
-      case "miligram":
+      case "milligram":
         return value * 1000;
       case "kilogram":
         return value / 1000;
@@ -225,7 +226,7 @@ async function convertGram({ value, fromUnit, toUnit }) {
 async function convertOunce({ value, fromUnit, toUnit }) {
   if (fromUnit === "ounce") {
     switch (toUnit) {
-      case "miligram":
+      case "milligram":
         return value * 28349.523125;
       case "gram":
         return value * 28.349523125;
@@ -244,7 +245,7 @@ async function convertOunce({ value, fromUnit, toUnit }) {
 async function convertPound({ value, fromUnit, toUnit }) {
   if (fromUnit === "pound") {
     switch (toUnit) {
-      case "miligram":
+      case "milligram":
         return value * 453592.37;
       case "gram":
         return value * 453.59237;
@@ -263,7 +264,7 @@ async function convertPound({ value, fromUnit, toUnit }) {
 async function convertTon({ value, fromUnit, toUnit }) {
   if (fromUnit !== "ton") {
     switch (toUnit) {
-      case "miligram":
+      case "milligram":
         return value * 1000000000;
       case "gram":
         return value * 1000000;
