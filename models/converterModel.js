@@ -194,7 +194,6 @@ async function convertMiligram({ value, fromUnit, toUnit }) {
       case "ounce":
         return value / 28349.523125;
       case "pound":
-        console.log(value / 453592.37)
         return value / 453592.37;
       case "ton":
         return value / 1000000000;
